@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import './style.scss'
+import Header from './components/Header.jsx'
 
 function App() {
 
   return (
     <>
+    <Header />
     </>
   )
 }
