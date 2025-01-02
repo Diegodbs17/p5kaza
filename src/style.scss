@@ -49,5 +49,16 @@
         grid-template-columns: repeat(3, 1fr);
         place-items: center;
         gap: 30px;
+        padding: 20px 0;
+    }
+    .appartements-card {
+        position: relative;
+    }
+    .appartements-title {
+        position: absolute;
+        top: 310px;
+        left: 10px;
+        color: #fff;
+        font-weight: 700;
     }
 }
