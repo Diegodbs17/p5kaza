@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router';
+import { NavLink, Outlet, Link } from 'react-router';
 
 function Layout() {
   return (
@@ -7,7 +7,7 @@ function Layout() {
         <header className='header'>
             <div className="container">
                 <div className="header-content">
-                    <img src="logo.svg" alt="Logo Kaza" />
+                    <Link to="/"><img src="logo.svg" alt="Logo Kaza" /></Link>
                     <nav>
                         <ul className="nav-link">
                             <li className="nav-item"><NavLink to="/" className='link-item' end>Accueil</NavLink></li>

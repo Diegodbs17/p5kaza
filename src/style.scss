@@ -26,7 +26,7 @@
     .hero-home-container {
         display: grid;
         place-items: center;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('background.webp');
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('background-home.webp');
         background-position: center;
         height: 223px;
         border-radius: 25px;
@@ -78,5 +78,72 @@
         font-weight: 500;
         font-size: 20px;
         margin-top: 30px;
+    }
+}
+
+.hero-about {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url('background-about.webp');
+    background-position: center;
+    height: 223px;
+    border-radius: 25px;
+    margin: 30px 0;
+}
+
+
+.collapse-content {
+    position: relative;
+    .collapse-ask {
+        display: none;
+    }
+    .collapse-items {
+        display: block;
+        background: #FF6060;
+        width: 100%;
+        cursor: pointer;
+        padding: 15px 10px;
+        font-size: 30px;
+        font-weight: 700;
+        color: #FFF;
+        border-radius: 5px;
+    }
+    .icon-collapse {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        -webkit-user-select: none;    
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+    }
+    .answer-collapse {
+        padding: 0px 15px;
+        margin: 5px 0;
+        width:100%!important;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+        opacity: 0;
+        -webkit-transition: .3s ease;
+        -moz-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+        background-color: #F6F6F673;
+        border-radius: 5px;
+    }
+    .collapse-ask:checked ~ .answer-collapse{
+        height: auto;
+        opacity: 1;
+        padding: 15px;
+    }
+    .collapse-ask:checked ~ .collapse-items .icon-collapse {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
     }
 }

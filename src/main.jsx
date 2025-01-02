@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
-import App from './App'; // Contient les layouts et les routes
+import App from './App';
 import './style.scss'
 import './reset.scss'
 
