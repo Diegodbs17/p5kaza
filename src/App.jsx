@@ -1,19 +1,18 @@
-import './style.scss'
-import Header from './components/Header.jsx'
-import HeroHome from './components/HeroHome.jsx'
-import Grid from './components/grid.jsx'
-import Footer from "./components/footer.jsx";
+import { Routes, Route } from 'react-router';
+import Layout from './components/layout';
+import Home from './pages/Home';
 
 function App() {
-
   return (
-    <>
-    <Header />
-    <HeroHome />
-    <Grid />
-    <Footer />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<div>Coucou</div>} />
+        <Route path="contact" element={<div>Coucou</div>} />
+      </Route>
+      <Route path="*" element={<div>Coucou 404</div>} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
