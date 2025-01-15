@@ -54,9 +54,14 @@
     .appartements-card {
         position: relative;
     }
+    .card-img {
+        width: 340px;
+        height: 100%;
+        filter: brightness(0.8);
+    }
     .appartements-title {
         position: absolute;
-        top: 310px;
+        top: 82%;
         left: 10px;
         color: #fff;
         font-weight: 700;

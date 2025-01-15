@@ -1,46 +1,48 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router';
 
-function grid() {
+const FetchLogements = () => {
+  const [logements, setLogements] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLogements = async () => {
+      try {
+        const response = await fetch('logements.json');
+        if (!response.ok) {
+          throw new Error(`Erreur lors du chargement : ${response.status}`);
+        }
+        const data = await response.json();
+        setLogements(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchLogements();
+  }, []);
+
+  if (loading) return <div>Chargement...</div>;
+  if (error) return <div>Erreur : {error}</div>;
+
   return (
     <section id='grid-appartements'>
         <div className="container">
             <div className="grid-content">
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
-                <div className="appartements-card">
-                    <img className='card-img' src="https://picsum.photos/340" alt="" />
-                    <h2 className="appartements-title">Titre de la location</h2>
-                </div>
+                {logements.map((logement, index) => (
+                <Link to="/accomoditation">
+                    <div key={logement.id} className="appartements-card" id={logement.id}>
+                        <img className='card-img' src={logement.cover} alt={logement.title} />
+                        <h2 className="appartements-title">{logement.title}</h2>
+                    </div>
+                </Link>
+                ))}
             </div>
         </div>
     </section>
-  )
-}
+  );
+};
 
-export default grid
+export default FetchLogements;

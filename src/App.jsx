@@ -10,8 +10,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<div>Coucou</div>} />
+        <Route path="*" element={<div>Coucou 404</div>} />
       </Route>
-      <Route path="*" element={<div>Coucou 404</div>} />
     </Routes>
   );
 }
