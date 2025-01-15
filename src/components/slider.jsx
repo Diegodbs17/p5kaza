@@ -1,15 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-function slider() {
+const Slider = ({ pictures }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  if (!pictures || pictures.length === 0) {
+    return <div>Aucune image disponible</div>;
+  }
+
   return (
-    <>
-        <div className="container">
-            <div className="accomodation-content">
-                <div className="slider"><img src="https://picsum.photos/1240/415" alt="" /></div>
-            </div>
-        </div>
-    </>
-  )
-}
+    <div className="slider">
+      <div className="slider-container">
+        <img
+          src={pictures[currentIndex]}
+          alt={`Image ${currentIndex + 1}`}
+          className="slider-image"
+        />
+        <p className="slider-counter">{currentIndex + 1} / {pictures.length}</p>
+      </div>
+      {pictures.length > 1 && (
+        <>
+          <button className="slider-btn prev" onClick={prevImage}><i class="fa-solid fa-chevron-left"></i></button>
+          <button className="slider-btn next" onClick={nextImage}><i class="fa-solid fa-chevron-right"></i></button>
+        </>
+      )}
+    </div>
+  );
+};
 
-export default slider
+export default Slider;

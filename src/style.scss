@@ -55,16 +55,18 @@
         position: relative;
     }
     .card-img {
-        width: 340px;
-        height: 100%;
+        max-width: 340px;
+        height: 340px;
+        object-fit: cover;
         filter: brightness(0.8);
     }
     .appartements-title {
         position: absolute;
-        top: 82%;
+        top: 85%;
         left: 10px;
         color: #fff;
         font-weight: 700;
+        width: 65%;
     }
 }
 
@@ -194,14 +196,16 @@
         .accomodation-host {
             display: flex;
             align-items: center;
-        }
-        .accomodation-host-name {
-            width: 56%;
-            text-align: right;
-            margin-right: 10px;
-        }
-        .accomodation-host-img {
-            border-radius: 50px;
+            .accomodation-host-name {
+                width: 56%;
+                text-align: right;
+                margin-right: 10px;
+            }
+            .accomodation-host-img {
+                border-radius: 50px;
+                width: 75px;
+                height: 75px;
+            }
         }
         .accomodation-reviews-content {
             display: flex;
@@ -229,3 +233,52 @@
         width: 40%;
     }
 }
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 50px auto 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .slider-container {
+    position: relative;
+    max-width: 100%;
+    height: 415px;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+  }
+  
+  .slider-counter {
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 24px;
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+  }
+  
+  .slider-btn.prev {
+    left: 10px;
+  }
+  
+  .slider-btn.next {
+    right: 10px;
+  }

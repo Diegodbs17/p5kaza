@@ -32,7 +32,7 @@ const FetchLogements = () => {
         <div className="container">
             <div className="grid-content">
                 {logements.map((logement, index) => (
-                <Link to="/accomoditation">
+                <Link key={logement.id} to={`/Accommodation/${logement.id}`}>
                     <div key={logement.id} className="appartements-card" id={logement.id}>
                         <img className='card-img' src={logement.cover} alt={logement.title} />
                         <h2 className="appartements-title">{logement.title}</h2>
