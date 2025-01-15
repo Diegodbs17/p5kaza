@@ -31,8 +31,8 @@ const Slider = ({ pictures }) => {
       </div>
       {pictures.length > 1 && (
         <>
-          <button className="slider-btn prev" onClick={prevImage}><i class="fa-solid fa-chevron-left"></i></button>
-          <button className="slider-btn next" onClick={nextImage}><i class="fa-solid fa-chevron-right"></i></button>
+          <button className="slider-btn prev" onClick={prevImage}><i className="fa-solid fa-chevron-left"></i></button>
+          <button className="slider-btn next" onClick={nextImage}><i className="fa-solid fa-chevron-right"></i></button>
         </>
       )}
     </div>

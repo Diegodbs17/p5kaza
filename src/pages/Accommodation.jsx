@@ -7,8 +7,9 @@ function Accommodation() {
     const { id } = useParams();
   return (
     <>
-    {/* <Slider /> */}
-    <AccomodationDescription />
+    <div className="container">
+        <AccomodationDescription />
+    </div>
     </>
   )
 }

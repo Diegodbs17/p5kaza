@@ -7,7 +7,7 @@ function Layout() {
         <header className='header'>
             <div className="container">
                 <div className="header-content">
-                    <Link to="/"><img src="logo.svg" alt="Logo Kaza" /></Link>
+                    <Link to="/"><img className='header-img-logo' src="logo.svg" alt="Logo Kaza" /></Link>
                     <nav>
                         <ul className="nav-link">
                             <li className="nav-item"><NavLink to="/" className='link-item' end>Accueil</NavLink></li>

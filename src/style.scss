@@ -48,7 +48,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         place-items: center;
-        gap: 30px;
+        gap: 20px;
         padding: 20px 0;
     }
     .appartements-card {
@@ -59,6 +59,7 @@
         height: 340px;
         object-fit: cover;
         filter: brightness(0.8);
+        border-radius: 10px;
     }
     .appartements-title {
         position: absolute;
@@ -99,6 +100,7 @@
 
 .collapse-content {
     position: relative;
+    margin-top: 50px;
     .collapse-ask {
         display: none;
     }
@@ -282,3 +284,163 @@
   .slider-btn.next {
     right: 10px;
   }
+
+
+
+#error-404 {
+    height: 69vh;
+    width: 100%;
+    position: relative;
+    .error-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        .error-title {
+            font-size: 288px;
+            color: #FF6060;
+            font-weight: 700;
+            margin-bottom: 100px;
+        }
+        .error-text {
+            font-size: 30px;
+            color: #FF6060;
+            margin-bottom: 100px;
+        }
+        .error-link-home {
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 335px;
+    }
+    .header {
+        .header-img-logo {
+            width: 145px;
+        }
+        .link-item {
+            font-size: 16px;
+        }
+    }
+    .hero-home {
+        width: 335px;
+        .hero-home-container {
+            height: 111px;
+            place-items: center start;
+        }
+        .hero-home-heading {
+            font-size: 18px;
+            margin-left: 10px;
+            width: 52%;
+        }
+    }
+    #grid-appartements {
+        .grid-content {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+            background-color: transparent;
+        }
+        .card-img {
+            width: 335px;
+            height: 255px;
+        }
+        .appartements-title {
+            top: 80%;
+        }
+    }
+    .footer {
+        .copyright {
+            font-size: 16px;
+            width: 47%;
+            text-align: center;
+        }
+    }
+    .slider {
+        .slider-container {
+            height: 255px;
+            .slider-image {
+                height: 255px;
+            }
+            .slider-counter {
+                display: none;
+            }
+        }
+        .slider-btn {
+            font-size: 30px;
+        }
+    }
+    .accomodation-top-content {
+        flex-direction: column;
+        align-items: start;
+        .accomodation-description-content-left {
+            margin-top: 0;
+            .accomodation-title {
+                font-size: 18px;
+            }
+            .accomodation-geographie {
+                font-size: 14px;
+            }
+            .accomodation-tags-item {
+                font-size: 10px;
+            }
+        }
+        .accomodation-description-content-right {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row-reverse;
+            width: 100%;
+            .accomodation-host {
+                .accomodation-host-img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+            .accomodation-reviews-content {
+                gap: 5px;
+            }
+            .accomodation-reviews-stars {
+                font-size: 18px;
+            }
+        }
+    }
+    .accomodation-description-content-tabs {
+        flex-direction: column;
+        align-items: center;
+        .collapse-content {
+            width: 100%;
+            .collapse-items {
+                font-size: 18px;
+            }
+        }
+    }
+    .hero-about {
+        height: 111px;
+    }
+    .collapse-content {
+        margin-top: 30px;
+        .collapse-items {
+            font-size: 18px;
+        }
+    }
+    #error-404 {
+        .error-content {
+        width: 100%;
+            .error-title {
+                font-size: 96px;
+            }
+            .error-text {
+                font-size: 22px;
+            }
+            .error-link-home {
+                font-size: 14px;
+            }
+        }
+    }
+}

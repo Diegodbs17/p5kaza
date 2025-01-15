@@ -3,6 +3,7 @@ import Layout from './components/layout';
 import Home from './pages/Home';
 import About from "./pages/About";
 import Accommodation from "./pages/Accommodation"
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -10,8 +11,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="contact" element={<div>Coucou</div>} />
-        <Route path="*" element={<div>Coucou 404</div>} />
+        <Route path="*" element={<Error />} />
         <Route path="/Accommodation/:id" element={<Accommodation />} />
       </Route>
     </Routes>

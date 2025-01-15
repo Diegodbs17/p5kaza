@@ -50,45 +50,43 @@ const AccommodationDescription = () => {
 
   return (
     <>
-    <div className="container">
-        <Slider pictures={logement.pictures} />
-        <div className="accomodation-top-content">
-            <div className="accomodation-description-content-left">
-                <h1 className="accomodation-title">{logement.title}</h1>
-                <h2 className="accomodation-geographie">{logement.location}</h2>
-                <div className="accomodation-tags">
-                    <ul className="accomodation-tags-list">
-                        {logement.tags.map((tag, index) => (
-                        <li key={index} className="accomodation-tags-item">{tag}</li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            <div className="accomodation-description-content-right">
-                <div className="accomodation-host">
-                    <h2 className="accomodation-host-name">{logement.host.name}</h2>
-                    <img className="accomodation-host-img" src={logement.host.picture} alt={logement.host.name} />
-                </div>
-                <div className="accomodation-reviews-content">
-                    <ul className="accomodation-reviews-content">{stars}</ul>
-                </div>
-            </div>
-        </div>
-        <div className="accomodation-description-content-tabs">
-            <div className='collapse-content'>
-                <input type="checkbox" id="description" name="description" className="collapse-ask" />
-                <label htmlFor="description" className="collapse-items">Description<span className='icon-collapse'><i className="fa-solid fa-chevron-up"></i></span></label>
-                <p className="answer-collapse">{logement.description}</p>
-            </div>
-            <div className='collapse-content'>
-                <input type="checkbox" id="items" name="items" className="collapse-ask" />
-                <label htmlFor="items" className="collapse-items">Équipements<span className='icon-collapse'><i className="fa-solid fa-chevron-up"></i></span></label>
-                <ul className="accomodation-equipemnts-list answer-collapse">
-                    {logement.equipments.map((equipment, index) => (
-                    <li key={index} className="accomodation-tags-item">{equipment}</li>
+    <Slider pictures={logement.pictures} />
+    <div className="accomodation-top-content">
+        <div className="accomodation-description-content-left">
+            <h1 className="accomodation-title">{logement.title}</h1>
+            <h2 className="accomodation-geographie">{logement.location}</h2>
+            <div className="accomodation-tags">
+                <ul className="accomodation-tags-list">
+                    {logement.tags.map((tag, index) => (
+                    <li key={index} className="accomodation-tags-item">{tag}</li>
                     ))}
                 </ul>
             </div>
+        </div>
+        <div className="accomodation-description-content-right">
+            <div className="accomodation-host">
+                <h2 className="accomodation-host-name">{logement.host.name}</h2>
+                <img className="accomodation-host-img" src={logement.host.picture} alt={logement.host.name} />
+            </div>
+            <div className="accomodation-reviews-content">
+                <ul className="accomodation-reviews-content">{stars}</ul>
+            </div>
+        </div>
+    </div>
+    <div className="accomodation-description-content-tabs">
+        <div className='collapse-content'>
+            <input type="checkbox" id="description" name="description" className="collapse-ask" />
+            <label htmlFor="description" className="collapse-items">Description<span className='icon-collapse'><i className="fa-solid fa-chevron-up"></i></span></label>
+            <p className="answer-collapse">{logement.description}</p>
+        </div>
+        <div className='collapse-content'>
+            <input type="checkbox" id="items" name="items" className="collapse-ask" />
+            <label htmlFor="items" className="collapse-items">Équipements<span className='icon-collapse'><i className="fa-solid fa-chevron-up"></i></span></label>
+            <ul className="accomodation-equipemnts-list answer-collapse">
+                {logement.equipments.map((equipment, index) => (
+                <li key={index} className="accomodation-tags-item">{equipment}</li>
+                ))}
+            </ul>
         </div>
     </div>
     </>

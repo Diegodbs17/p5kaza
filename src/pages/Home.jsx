@@ -5,8 +5,11 @@ import Grid from '../components/grid.jsx'
 function Home() {
   return (
     <>
-        <HeroHome />
-        <Grid />
+    <div className="container">
+      <HeroHome />
+      <Grid />
+    </div>
+
     </>
   )
 }
