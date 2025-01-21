@@ -7,7 +7,7 @@ function Layout() {
         <header className='header'>
             <div className="container">
                 <div className="header-content">
-                    <Link to="/"><img className='header-img-logo' src="logo.svg" alt="Logo Kaza" /></Link>
+                    <Link to="/"><img className='header-img-logo' src="/logo.svg" alt="Logo Kaza" /></Link>
                     <nav>
                         <ul className="nav-link">
                             <li className="nav-item"><NavLink to="/" className='link-item' end>Accueil</NavLink></li>
@@ -22,7 +22,7 @@ function Layout() {
         </main>
         <footer className='footer'>
             <div className="footer-content">
-                <img className='img-footer' src="footerlogo.svg" alt="Logo Kaza" />
+                <img className='img-footer' src="/footerlogo.svg" alt="Logo Kaza" />
                 <p className="copyright">© 2020 Kasa. All rights reserved</p>
             </div>
         </footer>

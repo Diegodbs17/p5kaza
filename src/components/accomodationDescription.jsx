@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
-import Slider from "./slider";
+import { useParams, useNavigate } from 'react-router';
+import Slider from './slider';
 
 const AccommodationDescription = () => {
   const { id } = useParams();
   const [logement, setLogement] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLogementDetails = async () => {
@@ -18,7 +19,8 @@ const AccommodationDescription = () => {
         const data = await response.json();
         const logementDetails = data.find((item) => item.id === id);
         if (!logementDetails) {
-          throw new Error('Logement non trouvé');
+          navigate('/error', { replace: true });
+          return;
         }
         setLogement(logementDetails);
       } catch (err) {
@@ -29,24 +31,25 @@ const AccommodationDescription = () => {
     };
 
     fetchLogementDetails();
-  }, [id]);
+  }, [id, navigate]);
 
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>Erreur : {error}</div>;
-  if (!logement) return <div>Aucune donnée disponible pour ce logement.</div>;
+
+  if (!logement) return null;
 
   const stars = Array(5)
-  .fill(null)
-  .map((_, index) => (
-    <li
-      key={index}
-      className={`accomodation-reviews-stars ${
-        index < logement.rating ? 'full-stars' : ''
-      }`}
-    >
-      <i className="fa-solid fa-star"></i>
-    </li>
-  ));
+    .fill(null)
+    .map((_, index) => (
+      <li
+        key={index}
+        className={`accomodation-reviews-stars ${
+          index < logement.rating ? 'full-stars' : ''
+        }`}
+      >
+        <i className="fa-solid fa-star"></i>
+      </li>
+    ));
 
   return (
     <>
