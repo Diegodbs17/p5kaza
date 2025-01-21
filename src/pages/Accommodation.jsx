@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import AccomodationDetails from "../components/accomodationDetails";
-import { useParams } from 'react-router';
+import { useParams } from "react-router";
 
 function Accommodation() {
-    const { id } = useParams();
+  const { id } = useParams();
   return (
     <>
-    <AccomodationDetails />
+      <AccomodationDetails />
     </>
-  )
+  );
 }
 
-export default Accommodation
+export default Accommodation;

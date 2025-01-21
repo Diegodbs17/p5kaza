@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Slider = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,12 +27,18 @@ const Slider = ({ pictures }) => {
           alt={`Image ${currentIndex + 1}`}
           className="slider-image"
         />
-        <p className="slider-counter">{currentIndex + 1} / {pictures.length}</p>
+        <p className="slider-counter">
+          {currentIndex + 1} / {pictures.length}
+        </p>
       </div>
       {pictures.length > 1 && (
         <>
-          <button className="slider-btn prev" onClick={prevImage}><i className="fa-solid fa-chevron-left"></i></button>
-          <button className="slider-btn next" onClick={nextImage}><i className="fa-solid fa-chevron-right"></i></button>
+          <button className="slider-btn prev" onClick={prevImage}>
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+          <button className="slider-btn next" onClick={nextImage}>
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
         </>
       )}
     </div>

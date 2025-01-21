@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 const FetchLogements = () => {
   const [logements, setLogements] = useState([]);
@@ -9,7 +9,7 @@ const FetchLogements = () => {
   useEffect(() => {
     const fetchLogements = async () => {
       try {
-        const response = await fetch('logements.json');
+        const response = await fetch("logements.json");
         if (!response.ok) {
           throw new Error(`Erreur lors du chargement : ${response.status}`);
         }
@@ -28,19 +28,27 @@ const FetchLogements = () => {
   if (error) return <div>Erreur : {error}</div>;
 
   return (
-    <section id='grid-appartements'>
-        <div className="container">
-            <div className="grid-content">
-                {logements.map((logement, index) => (
-                <Link key={logement.id} to={`/Accommodation/${logement.id}`}>
-                    <div key={logement.id} className="appartements-card" id={logement.id}>
-                        <img className='card-img' src={logement.cover} alt={logement.title} />
-                        <h2 className="appartements-title">{logement.title}</h2>
-                    </div>
-                </Link>
-                ))}
-            </div>
+    <section id="grid-appartements">
+      <div className="container">
+        <div className="grid-content">
+          {logements.map((logement, index) => (
+            <Link key={logement.id} to={`/Accommodation/${logement.id}`}>
+              <div
+                key={logement.id}
+                className="appartements-card"
+                id={logement.id}
+              >
+                <img
+                  className="card-img"
+                  src={logement.cover}
+                  alt={logement.title}
+                />
+                <h2 className="appartements-title">{logement.title}</h2>
+              </div>
+            </Link>
+          ))}
         </div>
+      </div>
     </section>
   );
 };

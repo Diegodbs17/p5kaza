@@ -1,8 +1,8 @@
-import { Routes, Route } from 'react-router';
-import Layout from './components/layout';
-import Home from './pages/Home';
+import { Routes, Route } from "react-router";
+import Layout from "./components/layout";
+import Home from "./pages/Home";
 import About from "./pages/About";
-import Accommodation from "./pages/Accommodation"
+import Accommodation from "./pages/Accommodation";
 import Error from "./pages/Error";
 
 function App() {
