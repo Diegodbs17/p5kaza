@@ -97,8 +97,8 @@
 .hero-about {
   background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
     ),
     url("/background-about.webp");
   background-position: center;
@@ -404,6 +404,7 @@
       align-items: center;
       flex-flow: row-reverse;
       width: 100%;
+      margin-top: 20px;
       .accomodation-host {
         .accomodation-host-img {
           width: 60px;
