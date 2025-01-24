@@ -324,9 +324,9 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
   .container {
-    max-width: 335px;
+    max-width: 90%;
   }
   .header {
     .header-img-logo {
@@ -337,7 +337,7 @@
     }
   }
   .hero-home {
-    width: 335px;
+    width: 100%;
     .hero-home-container {
       height: 111px;
       place-items: center start;

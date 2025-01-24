@@ -1,6 +1,6 @@
 import React from "react";
 
-function collapse(props) {
+const Collapse = (props) => {
   return (
     <>
       <div className="collapse-content">
@@ -22,4 +22,4 @@ function collapse(props) {
   );
 }
 
-export default collapse;
+export default Collapse;

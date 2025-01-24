@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import Slider from "./slider";
-import Collapse from "./collapse";
+import Slider from "./Slider";
+import Collapse from "./Collapse";
 
 const AccommodationDescription = () => {
   const { id } = useParams();

@@ -1,8 +1,8 @@
 import React from "react";
-import HeroSection from "../components/herosection";
-import Collapse from "../components/collapse";
+import HeroSection from "../components/HeroSection";
+import Collapse from "../components/Collapse";
 
-function About() {
+const About = () => {
   return (
     <>
       <div className="container">

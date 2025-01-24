@@ -1,8 +1,8 @@
 import React from "react";
-import Grid from "../components/grid.jsx";
-import HeroSection from "../components/heroSection.jsx";
+import Grid from "../components/Grid.jsx";
+import HeroSection from "../components/HeroSection.jsx";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <HeroSection class="hero-home">

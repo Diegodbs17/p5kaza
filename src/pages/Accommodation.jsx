@@ -1,12 +1,11 @@
 import React from "react";
-import AccomodationDetails from "../components/accomodationDetails";
+import AccomodationDescription from "../components/AccomodationDescription";
 import { useParams } from "react-router";
 
-function Accommodation() {
-  const { id } = useParams();
+const Accommodation = () => {
   return (
     <>
-      <AccomodationDetails />
+      <AccomodationDescription />
     </>
   );
 }
